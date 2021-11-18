@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+    <meta charset="utf-8">
+    <title>Unsecurly</title>
+     <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/910625098212458577/910690670669361182/image-_22_.ico">
+  
+    <meta name="Description" content="Unsecurly">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=yes" />
+    <link rel="stylesheet" href="/assets/main.css">
+  </head>
+
+ <img {
+      src="https://cdn.discordapp.com/attachments/910625098212458577/910651804004536400/unknown.png" alt="funny" width="350" height="350" style="outline:white;text-decoration:none;border:0.5" class="CToWUd" object-fit:auto;
+  }>
+
+  <body style="overflow:hidden;">
+    <div class="navbar" id="navBar">
+      <a href="/" style="font-family: Cursive">Unsecurly</a>
+      <a href="/media.html" style="font-family: Cursive">Extra</a>
+      <a href="https://discord.gg/tevXN95V9D" target="_blank" style="font-family: Cursive">Discord Server</a>
+      <a href="javascript:void(0);" class="icon" onclick="navToggle()"><i class="fa fa-bars"></i></a>
+    </div>
+  <div class="bodycontainer" style="height: 35%">
+    <h1 style="font-family: Cursive">Unsecurly V1.07</h1>
+        <form class="bar" id="searchform">
+      <input type="text" autocomplete="off" class="sinput" name="search-bar" id="search-bar" list="searchsuggestions" placeholder="Enter search query or direct URL.">
+      <button aria-label="Submit" type="submit"><i style="color:white;" class="fa fa-arrow-right" aria-hidden="true"></i></button><datalist id="searchsuggestions"></datalist>
+    </form>
+    <h4 style="font-family: Cursive"><a href="/assets/legal.txt">Rules of our Service.</a></h4>
+    <h4 style="font-family: Cursive">DOWN WITH SCHOOL CENSORSHIP!</h4>
+    <noscript>Sorry for the inconvenience. Your browser does not support Javascript, meaning functionality of this website is not guaranteed.</noscript>
+  </div>
+  <script src="./assets/main.js"></script>
+    <p style = "position:fixed; bottom:0;right:15; z-index: 1; color:white; font-family: Cursive">Made by Students. For Students.</p>
+         <canvas id="canvas" style = "position:fixed; top:0;left:0; z-index: -1"></canvas>           
+         <script>
+                  var canvas = document.getElementById("canvas"),
+    ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+var stars = [], // Array that contains the stars
+    FPS = 60, // Frames per second
+    x = 100, // Number of stars
+    mouse = {
+      x: 0,
+      y: 0
+    };  // mouse location
+
+// Push stars to array
+
+for (var i = 0; i < x; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 1 + 1,
+    vx: Math.floor(Math.random() * 50) - 25,
+    vy: Math.floor(Math.random() * 50) - 25
+  });
+}
+
+// Draw the scene
+
+function draw() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  
+  ctx.globalCompositeOperation = "lighter";
+  
+  for (var i = 0, x = stars.length; i < x; i++) {
+    var s = stars[i];
+  
+    ctx.fillStyle = "#fff";
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.fillStyle = 'black';
+    ctx.stroke();
+  }
+  
+  ctx.beginPath();
+  for (var i = 0, x = stars.length; i < x; i++) {
+    var starI = stars[i];
+    ctx.moveTo(starI.x,starI.y); 
+    if(distance(mouse, starI) < 150) ctx.lineTo(mouse.x, mouse.y);
+    for (var j = 0, x = stars.length; j < x; j++) {
+      var starII = stars[j];
+      if(distance(starI, starII) < 150) {
+        //ctx.globalAlpha = (1 / 150 * distance(starI, starII).toFixed(1));
+        ctx.lineTo(starII.x,starII.y); 
+      }
+    }
+  }
+  ctx.lineWidth = 0.05;
+  ctx.strokeStyle = 'white';
+  ctx.stroke();
+}
+
+function distance( point1, point2 ){
+  var xs = 0;
+  var ys = 0;
+ 
+  xs = point2.x - point1.x;
+  xs = xs * xs;
+ 
+  ys = point2.y - point1.y;
+  ys = ys * ys;
+ 
+  return Math.sqrt( xs + ys );
+}
+
+// Update star locations
+
+function update() {
+  for (var i = 0, x = stars.length; i < x; i++) {
+    var s = stars[i];
+  
+    s.x += s.vx / FPS;
+    s.y += s.vy / FPS;
+    
+    if (s.x < 0 || s.x > canvas.width) s.vx = -s.vx;
+    if (s.y < 0 || s.y > canvas.height) s.vy = -s.vy;
+  }
+}
+
+canvas.addEventListener('mousemove', function(e){
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+// Update and draw
+
+function tick() {
+  draw();
+  update();
+  requestAnimationFrame(tick);
+}
+
+tick();                                
+                                                  </script>
+                                                  
+                                                  
+  </body>
+</html>

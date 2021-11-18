@@ -1,0 +1,9 @@
+{
+    "port": "8080",
+    "ssl": true,
+    "prefix": "/search/",
+    "codec": "xor",
+    "localAddresses": [],
+    "blockedHostnames": [ "pornhub.com", "rule34.xxx", "fortniteburger.net" ]
+    
+}

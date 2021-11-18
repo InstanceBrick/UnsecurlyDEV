@@ -1,0 +1,33 @@
+{
+    "name": "unsecurly",
+    "version": "1.0.0",
+    "description": "End School censorship!",
+    "main": "server.js",
+    "scripts": {
+        "test": "node server.js",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/InstanceBrick/unsecurly.git"
+    },
+    "keywords": [
+        "web",
+        "proxy",
+        "corrosion",
+        "titaniumnetwork",
+        "unsecurly"
+    ],
+    "author": "InstanceBrick",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/InstanceBrick/Unsecurly/issues"
+    },
+    "homepage": "https://github.com/InstanceBrick/Unsecurly/unsecurly#readme",
+    "dependencies": {
+        "corrosion": "^1.0.0",
+        "express": "^4.17.1",
+        "fs": "^0.0.1-security",
+        "ws": "^8.2.0"
+    }
+}
