@@ -16,7 +16,7 @@ function isURL(a) {
 // Page Detection Begin
 try {
     var search = document.getElementById("search-bar"),
-        searchprovider = `https://duckduckgo.com/`,
+        searchprovider = `https://paulgo.io/`,
         suggelem = document.getElementById("searchsuggestions"),
         elemadd = (a, b, c) => Object.assign(b.appendChild(document.createElement(a)), c);
     // Search Suggestions
@@ -33,7 +33,7 @@ try {
 } catch {
     // Catch Media Page
     console.log("Could not load Index elements, assuming user is on media or media frame.");
-    function mailMaintainer() {window.location.href = `mailto:nullnvoid@mailfence.com?subject=Takedown Request For ${window.location.origin}`;}
+    function mailMaintainer() {window.location.href = `mailto:ewwe1338@gmail.com?subject=Takedown Request For ${window.location.origin}`;}
     try {
       var gf=parent.document.getElementById("gframe");
       function loadRuf(game){
