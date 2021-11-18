@@ -15,9 +15,9 @@ function isURL(a) {
 }
 // Page Detection Begin
 try {
-    var search = document.getElementById("search-bar"),
+    var search = document.getElementById("search-box"),
         searchprovider = `https://paulgo.io/`,
-        suggelem = document.getElementById("searchsuggestions"),
+        suggelem = document.getElementById("autocomplete"),
         elemadd = (a, b, c) => Object.assign(b.appendChild(document.createElement(a)), c);
     // Search Suggestions
     search.addEventListener("input", () => {
