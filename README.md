@@ -1,12 +1,12 @@
 # Unsecurly
 Fuck the school filters.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/InstanceBrick/Unsecurly/tree/main)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/InstanceBrick/UnsecurlyDEV/tree/main)
 
 ## Setup
 
 ```sh
-git clone https://github.com/InstanceBrick/Unsecurly
+git clone https://github.com/InstanceBrick/UnsecurlyDEV
 cd Unsecurly
 npm start
 ```
